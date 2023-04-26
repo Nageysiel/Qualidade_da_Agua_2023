@@ -43,7 +43,7 @@ con <- dbConnect(drv, dbname = "qa_v01_14_local",
 
 parametro <- 'od'
 parametro_abreviado <- "OD"
-parametro_extenso <- "Oxigênio Dissolvido na água"
+parametro_extenso <- "oxigênio dissolvido na água"
 
 serie_ini <- as.Date('2010-01-01', format = "%Y-%m-%d")
 serie_final <- as.Date('2023-12-31', format = "%Y-%m-%d")
@@ -54,18 +54,18 @@ final <- substr(serie_final, 1, 4)
 
 ```
 
-### **`r paste(parametro_extenso, " (", parametro_abreviado,")", sep="")`**
+### **Oxigênio Dissolvido na Água**
 
-Este relatório apresenta dados de qualidade da água de rios e lagos brasileiros. Os dados foram fornecidos pelas redes de monitoramento operadas por órgãos gestores de recursos hídricos das Unidades da Federação. Aqui são apresentados dados de **`r paste(parametro_extenso, " (", parametro_abreviado,")", sep="")`**.  
+**O `r paste(parametro_extenso, " (", parametro_abreviado,")", sep="")` na água garante a presença da vida nos rios e lagos**. Concentrações abaixo de 2 mg/L geralmente tornam inviável a sobrevivência dos peixes mais sensíveis à escassez de oxigênio na água. Além dos peixes, diversos outros organismos aquáticos dependem de um nível de OD adequado. Um ecossistema aquático pobre em OD é um ambiente desequilibrado. 
 
-**O OD na água garante a presença da vida nos rios e lagos**. Concentrações abaixo de 2 mg/L geralmente tornam inviável a sobrevivência dos peixes mais sensíveis à escassez de oxigênio na água. Com o OD abaixo de 2 mg/L na água, até mesmo os peixes mais resistentes encontram dificuldades em sobreviver. Além dos peixes, diversos outros organismos aquáticos dependem de um nível de OD adequado. Um ecossistema aquático pobre em OD é um ambiente desequilibrado. 
+O OD é um parâmetro de qualidade da água que reflete bem a poluição por cargas orgânicas, como efluentes domésticos e de determinadas indústrias. A decomposição da matéria orgânica pelos microorganismos da água consome oxigênio e deteriora a qualidade da água e a saúde dos ecossistemas aquáticos.
 
 ***
 ### **Distribuição dos pontos de monitoramento**
 
-`r paste("A quantidade de pontos de monitoramento da qualidade da água nas Unidades da Federação (UFs) varia bastante no Brasil. A produção de informações hidrológicas, como as de qualidade da água, é fundamental a gestão dos recursos hídricos. 
+Os dados aqui apresentados foram fornecidos pelas redes de monitoramento operadas por órgãos gestores de recursos hídricos das Unidades da Federação. A quantidade de pontos de monitoramento da qualidade da água nas Unidades da Federação (UFs) varia bastante no Brasil. A produção de informações hidrológicas, como as de qualidade da água, é fundamental a gestão dos recursos hídricos. 
 
-**A tabela abaixo mostra o número de pontos de monitoramento em cada UF com pelo menos uma observação de ", parametro_abreviado, " entre ", ini, " e ", final, "**.", sep="")`
+A tabela abaixo mostra o número de pontos de monitoramento em cada UF com pelo menos uma observação de `r paste(parametro_abreviado, " entre ", ini, " e ", final, ".", sep="")`
 
 
 ```{r stats_pontos, echo=FALSE, collapse = TRUE, layout="l-body-outset"}
@@ -138,9 +138,9 @@ summary1 %>%
 
 ```
 
-Ao nível das Unidades da Federação, sua distribuição prioriza os locais de interesse para a gestão da qualidade da água dos rios e lagos. Questões logísticas relacionadas com a coleta de amostras de água também são levadas em consideração pelos operadores das redes para a distribuição dos pontos no território.   
+Ao nível das Unidades da Federação, a distribuição dos pontos de monitoramento prioriza os locais de interesse para a gestão da qualidade da água dos rios e lagos. Questões logísticas relacionadas com a coleta de amostras de água também são levadas em consideração pelos operadores das redes para a distribuição dos pontos no território.   
 
-O mapa abaixo mostra a localização dos pontos de monitoramento. `r paste("Ao clicar nos pontos, o mapa interativo traz informações sobre o início e fim da série e o número de observações de ", parametro_abreviado, " no período analisado", sep="")`.
+O mapa abaixo mostra a localização dos pontos de monitoramento com ocncentrações de OD. `r paste("Ao clicar nos pontos, o mapa interativo traz informações sobre o início e fim da série e o número de observações de ", parametro_abreviado, " no período analisado", sep="")`.
 
 ```{r mapa1,  echo=FALSE, out.width='100%'}
 
@@ -162,7 +162,7 @@ write.csv(obs_uf, "pontos_uf.csv", row.names=TRUE)
 ```
 ***
 
-A quantidade de observações ou amostragens da concentração de `r paste(parametro_abreviado, sep="")` depende de quando a coleta de amostras teve início e fim, da frequência das coletas e da continuidade desta atividade. Geralmente, mais observações representam estatísticas mais confiáveis sobre a situação dos trechos monitorados.  
+A quantidade de observações da concentração de `r paste(parametro_abreviado, sep="")` depende de quando a coleta de amostras teve início e fim, da frequência das coletas e da continuidade desta atividade. Geralmente, mais observações representam estatísticas mais confiáveis sobre a situação dos trechos monitorados.  
 
 
 ***
@@ -173,11 +173,9 @@ A quantidade de observações ou amostragens da concentração de `r paste(param
 
 ```{r mapa1_2,  echo=FALSE, out.width='100%'}
 
-pal = colorRampPalette(c('sea green', 'pale green'))
-#pal <-  mapviewPalette("mapviewSpectralColors")
+pal = colorRampPalette(c('dark magenta', 'red', 'orange', 'yellow', 'lime green', 'light sky blue'))
 mapview(grouped_obs["média"], popup = popupTable(grouped_obs, zcol=c("codigo", "média", "n", "rio"), row.numbers=FALSE, feature.id=FALSE), 
         at=c(0, 2, 4, 5, 6, 18),
-     #   map.types = c("CartoDB.Positron", "Esri.WorldImagery"), 
         cex = 3, # tamanho dos markers 
         lwd = 0.2, #espessura da linha dos markers
         alpha.regions = 100, #opacidade dos markers
@@ -199,7 +197,7 @@ mapview(grouped_obs["média"], popup = popupTable(grouped_obs, zcol=c("codigo", 
 obs_desc <- grouped_obs %>%
       filter(n>=10)
 
-pal <-  mapviewPalette("mapviewSpectralColors")
+pal = colorRampPalette(c('light sky blue', 'lime green', 'orange', 'red', 'dark magenta'))
 mapview(obs_desc["desconformidade"],  popup = popupTable(obs_desc, zcol=c("codigo", "desconformidade", "n", "média"), row.numbers=FALSE, feature.id=FALSE),
         at = seq(0,100,20),
     #    map.types = c("CartoDB.Positron", "Esri.WorldImagery"), 

@@ -3,7 +3,6 @@ title: "**Qualidade da Água Superficial no Brasil**"
 ---
 
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, warning = FALSE, results='asis')
 
@@ -92,9 +91,9 @@ Entre os principais contaminantes da água, destacam-se:
 
 <br>
 
-### **Monitoramento da Qualidade da Água em Rios e Lagos**
+### **Monitoramento da Qualidade da Água nos Rios**
 
- O monitoramento da qualidade da água consiste na obtenção de informações quantitativas e representativas sobre as características físicas, químicas e biológicas de um corpo hídrico ao longo do tempo e do espaço. Estas características variam em função de diversos impactos na qualidade da água. Esta atividade geralmente baseia-se na coleta de amostras em rios e lagos. A análise das amostras produz dados que nos permitem avaliar a adequação da água para diversos usos com base em parâmetros de qualidade e seus respectivos valores de referência.
+O monitoramento da qualidade da água consiste basicamente na obtenção de informações quantitativas e representativas sobre as características físicas, químicas e biológicas da água em determinados trechos de um corpo hídrico ao longo do tempo. Os dados resultantes do monitoramento permitem avaliar a adequação da água para diversos usos com base em parâmetros de qualidade e valores de referência.
 
 
 <div style= "float:center;position: relative; top: 0px">
@@ -107,14 +106,11 @@ knitr::include_graphics("monitoramento_horizontal.png")
     
 </div>
     
-A distribuição de pontos de monitoramento nos corpos hidricos na bacia hidrográfica é um fator importante no sentido de apontar áreas prioritárias para o controle da poluição da água. Igualmente importante é a frequência na qual estas amostras são colhidas, uma vez que a série histórica de dados resultante desta atividade mostra tendências na evolução da qualidade da água ao longo do tempo. O monitoramento é, portanto, uma atividade aliada da implementação dos instrumentos de gestão de recursos hídricos, especialmente os planos de bacias hidrográficas e o enquadramento dos corpos hídricos em classes de qualidade segundo os usos preponderantes da água.
-
-
 <br>
 
-### **Monitoramento nas Unidades da Federação**
+### **Redes de Monitoramento no Brasil**
 
-As principais redes de monitoramento da qualidade de água dos rios brasileiros são operadas por órgãos governamentais responséveis pela gestão ambiental e dos recursos hídricos nas Unidades da Federação (UFs). O mapa abaixo mostra as UFs que operam estas redes no Brasil e a quantidade de pontos de monitoramento em operação no período de 2010 a 2021. O número de pontos de monitoramento é apresentado no mapa interativo ao clicar na UF. 
+As principais redes de monitoramento da qualidade de água dos rios brasileiros são operadas por órgãos governamentais responsáveis pela gestão ambiental e dos recursos hídricos nas Unidades da Federação (UFs). O mapa abaixo mostra as UFs que operam estas redes no Brasil e a quantidade de pontos de monitoramento com dados de qualidade da água em nossa base no período de 2010 a 2021. 
 
 <div style= "float:center;position: relative; top: 0px">
     
@@ -206,23 +202,37 @@ mapview(obs_uf_shp["Pontos"], popup = popupTable(obs_uf_shp, zcol= c("UF", "Pont
 
 Estas redes estão sendo integradas à Rede Nacional de Monitoramento de Qualidade das Águas (RNQA), criada em 2013 pela ANA depois de ampla discussão com as UFs sobre seu escopo, funcionamento e sustentabilidade financeira. A expansão destas redes a todas UFs é prevista segundo critérios do projeto da RNQA. São objetivos da RNQA:   
 
-- Analisar a tendência de evolução da qualidade das águas superficias;
+- Analisar a tendência de evolução da qualidade das águas superficiais;
 - Avaliar se a qualidade atual das águas atende os usos estabelecidos pelo seu enquadramento;
 - Identificar áreas críticas com relação à poluição hídrica;
-- Aferir a efetividade da gestão sobre as ações de recuperação da qualidade das águas superficias;
+- Aferir a efetividade da gestão sobre as ações de recuperação da qualidade das águas superficiais;
 - Apoiar as ações de planejamento, outorga, licenciamento e fiscalização.
 
 <br>
 
-### **Enquadramento dos trechos monitorados**
+### **Monitoramento e Enquadramento**
 
-O enquadramento de corpos hídricos em classes é um instrumento da Política Nacional de Recursos Hídricos (Lei Federal nº 9.433/1997) que busca estabelecer o nível de qualidade da água, de um determinado trecho do corpo hídrico, adequado aos seus usos preponderantes, atuais ou pretendidos. O conceito por trás do instrumento é estabelecer para as águas brutas padrões de qualidade a serem mantidos ou metas a serem perseguidas por meio das ações de gestão da qualidade da água. Cada classe de qualidade representa um conjunto de padrões mensuráveis de qualidade da água. Em resumo, o enquadramento é um instrumento de planejamento cujo objetivo é assegurar qualidade compatível com os usos mais exigentes de um corpo hídrico e diminuir os custos de combate à poluição, por meio de ações preventivas permanentes.
+<div style='float:right; padding-left: 15px'>
 
-A Resolução CONAMA nº 357/2005 estabelece um sistema de classificação em que, para cada classe, há possíveis destinações de usos e um conjunto de condições e padrões de qualidade, com exceção da classe especial, que deve ter suas condições naturais mantidas. Para água doce são definidas cinco classes de qualidade de água (classe especial, classes 1, 2, 3 e 4). Constam nessa resolução limites individuais para mais de 90 parâmetros e condições que devem ser alcançados em cada uma das classes. 
+```{r fig_enquadramento, echo = FALSE}
 
-O mapa abaixo mostra as classes de qualidade nos trechos onde se encontram os pontos de monitoramento. O monitoramento a permite um diagnóstico sobre a qualidade da água em relação em relação às metas estabelecidas no enquadramento. Por meio do monitoramento também é possível acompanhar a evolução da qualidade da água de rios e lagos durante a implementação de medidas previstas nos planos de implementação do enquadramento. 
+knitr::include_graphics("enquadramento.jpg", dpi = 180)
 
-O mapa mostra que a maior parte dos pontos de monitoramento encontra-se em trechos não enquadrados. 
+```
+
+</div>
+
+O monitoramento tem a importante função de apontar áreas prioritárias para ações de controle da poluição da água e tendências na qualidade da água ao longo do tempo. Os dados do monitoramento também revelam se a água dos rios apresenta qualidade compatível com os usos a que se destina. Esta é, portanto, uma atividade aliada à implementação dos instrumentos de gestão de recursos hídricos, especialmente o enquadramento dos corpos hídricos em classes de qualidade segundo os usos preponderantes da água.
+
+O enquadramento de corpos de água em classes é um instrumento da Política Nacional de Recursos Hídricos (Lei Federal nº 9.433/1997) que busca estabelecer um nível de qualidade da água em um determinado trecho rio que seja adequado aos seus usos preponderantes, atuais ou pretendidos. O conceito por trás do instrumento é estabelecer para as águas brutas padrões de qualidade a serem mantidos ou metas a serem perseguidas por meio das ações de gestão da qualidade da água.
+
+
+A Resolução CONAMA nº 357/2005 estabelece um sistema de classificação em que, para cada classe, há possíveis destinações de usos e um conjunto de condições e padrões de qualidade a serem cumpridos com base em parâmetros físicos, químicos e biológicos. Para a água doce, em rios e lagos, são definidas cinco classes de qualidade de água (classe especial, 1, 2, 3 e 4). A resolução define limites individuais para mais de 90 parâmetros e condições que devem ser alcançados em cada uma das classes. A classe especial é uma exceção neste sentido, uma vez as condições naturais da água em um trecho de classe especial devem ser mantidas independemente de parâmetros preestablecidos com base nos usos.
+
+    
+O enquadramento dos corpos de água em classes de qualidade de acordo com os usos preponderantes pretendidos ocorre por meio de um processo participativo que culmina com a aprovação das metas de qualidade pelos conselhos de recursos hídricos estaduais ou federal, dependendo da dominialidade do rio ou lago. Segundo a resolução CONAMA nº 357/2005, enquanto não aprovados os respectivos enquadramentos, as águas doces serão consideradas classe 2.
+
+O mapa abaixo mostra as classes de qualidade nos trechos onde se encontram os pontos de monitoramento das redes operadas pelas UFs. 
 
 
 ```{r enquadramento, echo=FALSE, collapse = TRUE, layout="l-body-outset", out.width = '100%'}
@@ -256,8 +266,8 @@ classes <- classes %>%
   )
 )
 
-pal = colorRampPalette(c('light sky blue', 'dodger blue', 'lime green', 'chocolate', 'violet', 'gainsboro', 'wheat'))
-mapview(classes["Classe"], popup = popupTable(classes, zcol=c("Código", "UF", "Rio", "classe"), row.numbers=FALSE, feature.id=FALSE),
+pal = colorRampPalette(c('light sky blue', 'lime green', 'orange', 'red', 'dodger blue', 'gainsboro', 'wheat'))
+mapview(classes["Classe"], popup = popupTable(classes, zcol=c("Código", "UF", "Rio", "Classe"), row.numbers=FALSE, feature.id=FALSE),
         #map.types = c("CartoDB.Positron", "Esri.WorldImagery"), 
         cex = 3, # tamanho dos markers 
         lwd = 0.2, #espessura da linha dos markers
