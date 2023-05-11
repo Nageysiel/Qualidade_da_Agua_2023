@@ -115,7 +115,7 @@ As principais redes de monitoramento da qualidade de água dos rios brasileiros 
 <div style= "float:center;position: relative; top: 0px">
     
 ```{r pontos_uf,  echo=FALSE, warning=FALSE, message=FALSE, out.width = '100%'}
-
+options(OutDec=",", digits = "2")
 #knitr::include_graphics("pontos_uf.png")
 
 parametro_sql <- paste("SELECT codigo, data,  ", parametro, "  as valor, ", parametro, "_st as status FROM pgquali.qlttb_2_par_", parametro, " where ", parametro, "_st in (1,2) ORDER BY codigo", sep = "")
@@ -230,13 +230,13 @@ O enquadramento de corpos de água em classes é um instrumento da Política Nac
 A Resolução CONAMA nº 357/2005 estabelece um sistema de classificação em que, para cada classe, há possíveis destinações de usos e um conjunto de condições e padrões de qualidade a serem cumpridos com base em parâmetros físicos, químicos e biológicos. Para a água doce, em rios e lagos, são definidas cinco classes de qualidade de água (classe especial, 1, 2, 3 e 4). A resolução define limites individuais para mais de 90 parâmetros e condições que devem ser alcançados em cada uma das classes. A classe especial é uma exceção neste sentido, uma vez as condições naturais da água em um trecho de classe especial devem ser mantidas independemente de parâmetros preestablecidos com base nos usos.
 
     
-O enquadramento dos corpos de água em classes de qualidade de acordo com os usos preponderantes pretendidos ocorre por meio de um processo participativo que culmina com a aprovação das metas de qualidade pelos conselhos de recursos hídricos estaduais ou federal, dependendo da dominialidade do rio ou lago. Segundo a resolução CONAMA nº 357/2005, enquanto não aprovados os respectivos enquadramentos, as águas doces serão consideradas classe 2.
+O enquadramento dos corpos de água em classes de qualidade de acordo com os usos preponderantes pretendidos ocorre por meio de um processo participativo que culmina com a aprovação das metas de qualidade pelos conselhos de recursos hídricos estaduais ou federal, dependendo da dominialidade do rio ou lago. Segundo a resolução CONAMA nº 357/2005, enquanto não aprovados os respectivos enquadramentos, as águas doces serão consideradas classe 2, exceto se as condições de qualidade atuais forem melhores, o que determinará a aplicação da classe mais rigorosa correspondente.
 
 O mapa abaixo mostra as classes de qualidade nos trechos onde se encontram os pontos de monitoramento das redes operadas pelas UFs. 
 
 
 ```{r enquadramento, echo=FALSE, collapse = TRUE, layout="l-body-outset", out.width = '100%'}
-
+options(OutDec=",",  digits = "2")
 # Importa tabela de pontos
 pontos_sql <- paste("SELECT codigo, uf, latitude, longitude, enquadramento, corpo_hidrico FROM pgquali.qltft_1_pontos ORDER BY uf, codigo;", sep = "")
 pontos <- dbGetQuery(con, pontos_sql)

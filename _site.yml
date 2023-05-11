@@ -10,6 +10,8 @@ navbar:
       href: od.html
     - text: "Demanda Bioquímica de Oxigênio"
       href: dbo.html
+    - text: "Fósforo Total"
+      href: fosforo.html
     - text: "IQA"
       href: iqa.html
     - text: "Contato"
