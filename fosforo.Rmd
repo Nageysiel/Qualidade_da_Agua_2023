@@ -241,7 +241,7 @@ mapview(grouped_obs["Média"], popup = popupTable(grouped_obs, zcol=c("Código",
 ```
 
 ***
-#### **Desconformidade em relação ao critério da classe 2**    
+#### **Desconformidade em relação à classe de qualidade**   
 
 `r paste("De acordo com os padrões do enquadramento de corpos hídricos, **a concentração mínima de ", parametro_abreviado, " para águas de classe 1 ou 2 é 0,10 mg/L e para as Classes 3 ou 4  é 0,15 mg/L para rios (ambientes lóticos). Para os ambientes lênticos, como reservatórios e lagos, o limites máximo para a Classe 1 é 0,02; para a Classe 2 é 0,03 mg/L; e para águas de Classe 3 ou 4 é 0,05 mg/L (Res. CONAMA nº 357/2005)**", sep="")`.
 

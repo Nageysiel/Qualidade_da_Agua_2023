@@ -235,7 +235,7 @@ mapview(grouped_obs["Média"], popup = popupTable(grouped_obs, zcol=c("Código",
 ```
 
 ***
-#### **Desconformidade em relação ao critério da classe 2**    
+#### **Desconformidade em relação à classe de qualidade**      
 
 `r paste("De acordo com os padrões do enquadramento de corpos hídricos, **a concentração máxima de ", parametro_abreviado, " para águas de Classe 1 é 3 mg/L; para Classe 2 é 5 mg/L e para a Classe 3 é 10 mg/L. (Res. CONAMA nº 357/2005)**", sep="")`. 
 
