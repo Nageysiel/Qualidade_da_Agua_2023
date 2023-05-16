@@ -181,7 +181,7 @@ cat(msg1)
 summary1 <- t(c(summary(tbl$valor)))
 
 summary1 %>%
-  kbl(digits = 2, format = "html", caption = "Estatísticas de OD (mg/L)", font_size = 16, booktabs = TRUE, col.names = c("Mín.", "Quartil 1","Mediana","Média","Quartil 3","Máx." ) ) %>%
+  kbl(digits = 2, format = "html", caption = "Estatísticas de fósforo total (mg/L)", font_size = 16, booktabs = TRUE, col.names = c("Mín.", "Quartil 1","Mediana","Média","Quartil 3","Máx." ) ) %>%
   kable_styling("striped", full_width = T, position = "left", font_size = 14) 
 
 ```
@@ -222,7 +222,9 @@ A quantidade de observações da concentração de `r paste(parametro_abreviado,
 
 `r paste("Médias das concentrações de ", parametro_abreviado, " (mg/L) para os pontos de monitoramento com, pelo menos, **10 observações no período**. No mapa abaixo, as cores mais escuras indicam trechos de rios em situação mais crítica em termos de ", parametro_abreviado, ".", sep="")`
 
-`r paste("Médias das concentrações de ", parametro_abreviado, " (mg/L) para os pontos de monitoramento com, pelo menos, **10 observações no período**. No mapa abaixo, as cores mais escuras indicam trechos de rios em situação mais crítica em termos de ", parametro_abreviado, ".", sep="")`
+`r paste("No mapa abaixo, são apresentados os pontos de monitoramento e respectivas **frequências percentuais de desconformidade das concentrações de ", parametro_abreviado," com os padrões de qualidade previstos as respectivas classes de qualidade definidas para o trecho em que se encontra o ponto**. As cores mais escuras apontam os trechos onde a concentração de ", parametro_abreviado," fica mais frequentemente em desconformidade com a classe do trecho.", sep="")` 
+
+**Para esta análise, os padrões de qualidade da classe 2 foram considerados para pontos localizados em trechos não enquadrados por um normativo específico e trechos para os quais não temos informações sobre o enquadramento. Para os trechos enquadrados na classe especial, nos quais devem ser mantidas as condições naturais da qualidade da água, foram considerados os critérios da classe 1.**
 
 ```{r mapa1_2,  echo=FALSE, out.width='100%'}
 ## converte separador de decimais para vírgula e limita decimais a 2 casas

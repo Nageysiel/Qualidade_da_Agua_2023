@@ -6,6 +6,8 @@ title: "**Qualidade da Água Superficial no Brasil**"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, warning = FALSE, results='asis')
 
+## instruções para publicação no github: https://youtu.be/0GjUWgl03vA
+
 ```
 
 
@@ -58,7 +60,7 @@ final <- substr(serie_final, 1, 4)
 ```
 
    
-### **A Qualidade da Água**
+### **Qualidade da Água**
 
 A qualidade da água nos corpos hídricos é determinada pelas condições naturais e ações humanas praticadas na bacia hidrográfica. Entre os fatores naturais que influenciam a qualidade da água em rios e lagos estão:    
 
@@ -182,8 +184,7 @@ obs_uf_shp <- na.omit(obs_uf_shp)
 # renomeia coluna NM_UF para Estado
 names(obs_uf_shp)[names(obs_uf_shp) == "NM_UF"] <- "UF"
 
-library(leafpop)
-pal <-  mapviewPalette("mapviewSpectralColors")
+# pal <-  mapviewPalette("mapviewSpectralColors")
 # mapview(obs_uf_shp["Pontos"], popup = popupTable(obs_uf_shp, zcol= c("Pontos", "UF"), row.numbers=FALSE, feature.id=FALSE),
 #         at = seq(1,800,100),
 #         map.types = c("CartoDB.Positron", "Esri.WorldImagery"), 
@@ -193,8 +194,12 @@ pal <-  mapviewPalette("mapviewSpectralColors")
 #         legend = TRUE, 
 #       #  col.regions = (pal (30)),
 #         layer.name = "Monitoramento nas UFs")
-
-mapview(obs_uf_shp["Pontos"], popup = popupTable(obs_uf_shp, zcol= c("UF", "Pontos"), row.numbers=FALSE, feature.id=FALSE), layer.name = "Monitoramento nas UFs",  alpha.regions = 0.5)
+pal <-  mapviewPalette("mapviewSpectralColors")
+mapview(obs_uf_shp["Pontos"], popup = popupTable(obs_uf_shp, zcol= c("UF", "Pontos"), row.numbers=FALSE, feature.id=FALSE),
+layer.name = "Monitoramento nas UFs",  
+at = seq(1,900,100),
+legend = TRUE, 
+alpha.regions = 0.5)
 
 ```
     
@@ -232,7 +237,7 @@ A Resolução CONAMA nº 357/2005 estabelece um sistema de classificação em qu
     
 O enquadramento dos corpos de água em classes de qualidade de acordo com os usos preponderantes pretendidos ocorre por meio de um processo participativo que culmina com a aprovação das metas de qualidade pelos conselhos de recursos hídricos estaduais ou federal, dependendo da dominialidade do rio ou lago. Segundo a resolução CONAMA nº 357/2005, enquanto não aprovados os respectivos enquadramentos, as águas doces serão consideradas classe 2, exceto se as condições de qualidade atuais forem melhores, o que determinará a aplicação da classe mais rigorosa correspondente.
 
-O mapa abaixo mostra as classes de qualidade nos trechos onde se encontram os pontos de monitoramento das redes operadas pelas UFs. 
+O mapa abaixo mostra as classes de qualidade definidas pela resolução CONAMA nº 357/2005 nos trechos onde se encontram os pontos de monitoramento das redes operadas pelas UFs. 
 
 
 ```{r enquadramento, echo=FALSE, collapse = TRUE, layout="l-body-outset", out.width = '100%'}
