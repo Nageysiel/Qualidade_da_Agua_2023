@@ -194,9 +194,9 @@ grouped_obs <- grouped_obs %>%
       filter(n>=10)
 
 # Mapa com pontos e séries históricas de dados
-pal <-  mapviewPalette("mapviewSpectralColors")
+pal = colorRampPalette(c( 'light sky blue', 'lime green',  'yellow', 'orange', 'red'))
 mapview(grouped_obs["n"], popup = popupTable(grouped_obs, zcol=c("Código", "n", "Início", "Final", "Rio", "Classe"), row.numbers=FALSE, feature.id=FALSE),
-        at = seq(40,144,13),
+        at=c(0, 20, 60, 120, 200),
       #  map.types = c("CartoDB.Positron", "Esri.WorldImagery"), 
         cex = 3, # tamanho dos markers 
         lwd = 0.2, #espessura da linha dos markers
