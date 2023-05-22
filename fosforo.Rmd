@@ -195,10 +195,6 @@ O mapa abaixo mostra a localização dos pontos de monitoramento com observaçõ
 ## converte separador de decimais para vírgula e limita decimais a 2 casas
 options(OutDec=",", digits = "2")
 
-# Elimina séries com menos de 10 observações para o mapa de desconformidade
-grouped_obs <- grouped_obs %>%
-      filter(n>=10)
-
 
 # Mapa com pontos e séries históricas de dados
 pal = colorRampPalette(c( 'light sky blue', 'lime green',  'yellow', 'orange', 'red'))
@@ -230,6 +226,10 @@ A quantidade de observações da concentração de `r paste(parametro_abreviado,
 ```{r mapa1_2,  echo=FALSE, out.width='100%'}
 ## converte separador de decimais para vírgula e limita decimais a 2 casas
 options(OutDec=",", digits = "2")
+
+# Elimina séries com menos de 10 observações para o mapa de desconformidade
+grouped_obs <- grouped_obs %>%
+      filter(n>=10)
 
 # Mapa com médias das séries
 pal = colorRampPalette(c('light sky blue', 'corn flower blue', 'lime green', 'orange', 'red', 'dark magenta'))
