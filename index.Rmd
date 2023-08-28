@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, warning = FALSE, results='as
 ## instruções para publicação no github: https://youtu.be/0GjUWgl03vA
 
 #git >- more >- shell >- git add . >- git commit -m "xxx built" .
+#https://github.com/souzademarcelo/Qualidade_da_Agua_2023.github.io.git
 
 ```
 
